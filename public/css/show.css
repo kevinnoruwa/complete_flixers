@@ -1,6 +1,7 @@
 #movie-background {
-    background:  center center no-repeat url("https://img.myflixer.to/xxrz/1200x600/201/54/f3/54f3ec9eb2dafd8bd18cd6f99f59b61a/54f3ec9eb2dafd8bd18cd6f99f59b61a.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
     object-fit: cover;
     object-position: center;
     width: 100%;

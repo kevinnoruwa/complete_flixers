@@ -1,0 +1,26 @@
+<%- include('partials/header.ejs') -%>
+
+<section id="error">
+    <div class="error-page">
+        <% if(err === null) { %>
+            <h2>Movie not found</h2>
+       <% } else { %>
+              <h1> <%= err.statusCode %></h1>
+                <p>Uh Oh! <%= err.message %></p>
+      <% } %>
+        
+     </div>
+     
+
+</section>
+
+    <script src="/js/main.js"></script>
+    <body>
+</html>
+
+
+
+
+
+
+

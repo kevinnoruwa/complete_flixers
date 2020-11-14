@@ -1,4 +1,6 @@
 <%- include('partials/header.ejs') -%>
+
+
 <section id="intro-section">
     <!-- <div class="inside">
         <div class="description">
@@ -26,162 +28,35 @@
     </div>
     <hr class="hr-line">
     <div class="content">
+       
         <div class="container group">
-            <div class="movie-box">
-                <a href="#">
-                    <div class="movie">
-                        <img src="https://img.myflixer.to/xxrz/250x400/201/fc/ca/fcca4cc65e1b45cf142dd4a283ec5020/fcca4cc65e1b45cf142dd4a283ec5020.jpg" alt="">
-                        <div class="movie-background">
-                            <div class="circle-icon">
-                                <i class="fa fa-play" aria-hidden="true"></i>
-                            </div>
-                           
-                        </div> 
-                    </div>
-                </a>
+            <% movies.forEach((movie) => { %>
+                <div class="movie-box">
+                    <a href="/movie/<%=movie.id%>">
+                        <div class="movie">
+                            <img src="<%=movie.image%>" alt="">
+                            <div class="movie-background">
+                                <div class="circle-icon">
+                                    <i class="fa fa-play" aria-hidden="true"></i>
+                                </div>
+                                
+                            </div> 
+                        </div>
+                    </a>
                 <div class="movie-description">
                     <div class="details">
-                        <span>Unhinged</span>
-                        <span>2020 . 89m</span>
+                        <span><%=movie.title%></span>
+                    
                     </div>
                 </div>
-            </div>
-            <div class="movie-box">
-                <a href="#">
-                    <div class="movie">
-                        <img src="https://img.myflixer.to/xxrz/250x400/201/fc/ca/fcca4cc65e1b45cf142dd4a283ec5020/fcca4cc65e1b45cf142dd4a283ec5020.jpg" alt="">
-                        <div class="movie-background">
-                            <div class="circle-icon">
-                                <i class="fa fa-play" aria-hidden="true"></i>
-                            </div>
-                           
-                        </div> 
-                    </div>
-                </a>
-                <div class="movie-description">
-                    <div class="details">
-                        <span>Unhinged</span>
-                        <span>2020 . 89m</span>
-                    </div>
-                </div>
-            </div>
-            <div class="movie-box">
-                <a href="#">
-                    <div class="movie">
-                        <img src="https://img.myflixer.to/xxrz/250x400/201/fc/ca/fcca4cc65e1b45cf142dd4a283ec5020/fcca4cc65e1b45cf142dd4a283ec5020.jpg" alt="">
-                        <div class="movie-background">
-                            <div class="circle-icon">
-                                <i class="fa fa-play" aria-hidden="true"></i>
-                            </div>
-                           
-                        </div> 
-                    </div>
-                </a>
-                <div class="movie-description">
-                    <div class="details">
-                        <span>Unhinged</span>
-                        <span>2020 . 89m</span>
-                    </div>
-                </div>
-            </div>
-            <div class="movie-box">
-                <a href="#">
-                    <div class="movie">
-                        <img src="https://img.myflixer.to/xxrz/250x400/201/fc/ca/fcca4cc65e1b45cf142dd4a283ec5020/fcca4cc65e1b45cf142dd4a283ec5020.jpg" alt="">
-                        <div class="movie-background">
-                            <div class="circle-icon">
-                                <i class="fa fa-play" aria-hidden="true"></i>
-                            </div>
-                           
-                        </div> 
-                    </div>
-                </a>
-                <div class="movie-description">
-                    <div class="details">
-                        <span>Unhinged</span>
-                        <span>2020 . 89m</span>
-                    </div>
-                </div>
-            </div>
-            <div class="movie-box">
-                <a href="#">
-                    <div class="movie">
-                        <img src="https://img.myflixer.to/xxrz/250x400/201/fc/ca/fcca4cc65e1b45cf142dd4a283ec5020/fcca4cc65e1b45cf142dd4a283ec5020.jpg" alt="">
-                        <div class="movie-background">
-                            <div class="circle-icon">
-                                <i class="fa fa-play" aria-hidden="true"></i>
-                            </div>
-                           
-                        </div> 
-                    </div>
-                </a>
-                <div class="movie-description">
-                    <div class="details">
-                        <span>Unhinged</span>
-                        <span>2020 . 89m</span>
-                    </div>
-                </div>
-            </div>
-            <div class="movie-box">
-                <a href="#">
-                    <div class="movie">
-                        <img src="https://img.myflixer.to/xxrz/250x400/201/fc/ca/fcca4cc65e1b45cf142dd4a283ec5020/fcca4cc65e1b45cf142dd4a283ec5020.jpg" alt="">
-                        <div class="movie-background">
-                            <div class="circle-icon">
-                                <i class="fa fa-play" aria-hidden="true"></i>
-                            </div>
-                           
-                        </div> 
-                    </div>
-                </a>
-                <div class="movie-description">
-                    <div class="details">
-                        <span>Unhinged</span>
-                        <span>2020 . 89m</span>
-                    </div>
-                </div>
-            </div>
-            <div class="movie-box">
-                <a href="#">
-                    <div class="movie">
-                        <img src="https://img.myflixer.to/xxrz/250x400/201/fc/ca/fcca4cc65e1b45cf142dd4a283ec5020/fcca4cc65e1b45cf142dd4a283ec5020.jpg" alt="">
-                        <div class="movie-background">
-                            <div class="circle-icon">
-                                <i class="fa fa-play" aria-hidden="true"></i>
-                            </div>
-                           
-                        </div> 
-                    </div>
-                </a>
-                <div class="movie-description">
-                    <div class="details">
-                        <span>Unhinged</span>
-                        <span>2020 . 89m</span>
-                    </div>
-                </div>
-            </div>
-            <div class="movie-box">
-                <a href="#">
-                    <div class="movie">
-                        <img src="https://img.myflixer.to/xxrz/250x400/201/fc/ca/fcca4cc65e1b45cf142dd4a283ec5020/fcca4cc65e1b45cf142dd4a283ec5020.jpg" alt="">
-                        <div class="movie-background">
-                            <div class="circle-icon">
-                                <i class="fa fa-play" aria-hidden="true"></i>
-                            </div>
-                           
-                        </div> 
-                    </div>
-                </a>
-                <div class="movie-description">
-                    <div class="details">
-                        <span>Unhinged</span>
-                        <span>2020 . 89m</span>
-                    </div>
-                </div>
-            </div>
+            </div>   
+
+            <% })%>     
         </div>
     </div>
 </section>
+
+
 <section id="pagination-section">
     <div class="pagination-container">
         <div class="pagination-box ">

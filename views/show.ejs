@@ -1,6 +1,7 @@
 <%- include('partials/header.ejs') -%>
+<% movie.forEach((movie) => { %>
 
-<section id="movie-background">
+<section id="movie-background" style="background-image: url(<%=movie.background_image%>);">
     <div class="background-color">
         <a href="/movie">
             <div class="play-circle">
@@ -11,7 +12,7 @@
             <div class="breadcrumb">
                 <a href="/">Home</a>
                 <a>/</a>
-                <a href="/movie">Movie</a> 
+                <a href="/movie/<%=movie.id%>"><%=movie.title%></a> 
             </div>
         </div>
     </div>
@@ -20,7 +21,7 @@
 <section id="description-box">
     <div class="inside-box">
         <div class="movie-img">
-            <img src="https://img.myflixer.to/xxrz/250x400/201/9d/0f/9d0fe6f16f205e483df14817753c1b0d/9d0fe6f16f205e483df14817753c1b0d.jpg" alt="">
+            <img src="<%=movie.image%>" alt="">
         </div>
         <div class="movie-details">
             <a href="#">
@@ -29,37 +30,37 @@
                 </div>
             </a>
             <div class="title">
-                <span>Avatar</span>
+                <span><%=movie.title%></span>
             </div>
             <hr class="hr">
             <div class="ratings">
                 <span class="hd">HD</span>
-                <span class="imdb"> IMDB: 7.8</span>
+                <span class="imdb"> IMDB: <%=movie.imdb%></span>
             </div>
             <div class="description">
-                <span>From the 22nd century, there is a Marine dispatched to the moon Pandora on a exceptional mission, however becomes protecting an alien civilization and torn between following orders.</span>
+                <span><%=movie.description%></span>
             </div>
             <div class="extras">
                 <div class="column-1">
                     <div class="inside-column">
                         <span class="bold">Release:</span>
-                        <span> 2009-12-10</span>
+                        <span><%=movie.release_date%></span>
                        
                     </div>
                     <div >
                         <span class="bold"> Genre: </span>
-                        <span> Action</span>
+                        <span><%=movie.genre%></span>
                           
                     </div>
                 </div>
                 <div class="column-2">
                     <div class="inside-column">
                         <span class="bold">  Duration:</span>
-                        <span>  162 min</span>    
+                        <span><%=movie.duration%> min</span>    
                     </div>
                     <div>
                         <span class="bold"> Casts: </span>
-                        <span>  Sigourney Weaver, Stephen Lang, David Van Horn, Luke Hawker, Lucy Briant</span> 
+                        <span><%=movie.cast%></span> 
                     </div>
                 </div>
 
@@ -70,6 +71,7 @@
     </div>
 
 </section>
+<% }) %>
 
 <section id="extra-movies">
     <div class="title">

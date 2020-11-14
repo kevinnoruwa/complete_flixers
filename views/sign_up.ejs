@@ -1,0 +1,55 @@
+<%- include('partials/header.ejs') -%>
+<section id="background">
+    <div class="inside">
+        <h2>Welcome to Flixers</h2>
+        <span>Fast streaming, no fees, high quality movies</span>
+    </div>
+
+</section>
+
+<section id="sign-up-form-section">
+    <form action="/signup" method="POST">  
+        <div class="form-heading">
+            <h3>Create your account</h3>
+            <div>
+                <span> Already have an account? </span>
+                <a class="highlight" href="/login">Log in</a>
+                <span>instead.</span>
+            </div>
+        </div> 
+        <hr class="hr-line"> 
+        <div class="inside-form">
+            <div class="first-name input">
+                <input placeholder="First name" type="text" name="user[f_name]" required>
+            </div>
+            <div class="last-name input">
+                <input placeholder="Last Name" type="text" name="user[l_name]" required>
+            </div>
+            <div class="email input">
+                <input placeholder="Email" type="text" name="user[email]" required>
+            </div>
+            <div class="password input">
+                <input placeholder="Password" type="password" name="user[password]" required>
+            </div>
+           
+
+            <div class="extra-text">
+                <div class="btn">
+                    <button>Sign up</button>
+                </div>
+                
+                <span class="tiny-text">By contiuning you agree to our Terms of service</span>
+            </div>
+        </div>
+    </form>
+
+</section>
+
+
+
+
+
+
+<script src="/js/main.js"></script>   
+</body>
+<html>

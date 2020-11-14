@@ -1,1 +1,169 @@
-/* No CSS *//*# sourceMappingURL=log-in.css.map */
+#background {
+    background-color: #0093E9;
+    background-image: linear-gradient(0deg, #3e8afa 0%, #144184 100%);
+    padding: 160px 0;
+    color: white;
+    position: relative;
+    top: -148px;
+}
+
+#background .inside {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  top: -20px;
+}
+
+
+#background .inside h2 {
+    font-size: 2.5rem;
+    margin: 0 0 10px;
+  }
+
+
+
+  /* FORM SECTION */
+
+#log-in-form-section {
+    position: relative;
+    top: -278px;
+    color: #1e1e1e;
+
+}
+
+
+#log-in-form-section form {
+    width: 600px;
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    box-shadow: 0 0 3px rgba(0,0,0,.2);
+    border-radius: 12px;
+  
+
+    
+}
+
+
+#log-in-form-section form .form-heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 25px 0;
+   
+}
+
+#log-in-form-section form .form-heading h3 { 
+    font-size: 1.6rem;
+    margin: 0 0 8px;
+   
+
+
+}
+
+#log-in-form-section form .form-heading .highlight { 
+    color: #3e8afa;
+   
+
+
+}
+
+#log-in-form-section form .hr-line { 
+    opacity: 0.3;
+   
+
+}
+
+
+
+#log-in-form-section form .inside-form { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 0 0px;
+    background: #fbfbfb;
+   
+
+}
+
+#log-in-form-section form .inside-form input { 
+    padding: 10px 5px;
+
+   
+
+}
+
+#log-in-form-section form .inside-form input::placeholder{ 
+  opacity: 0.9;
+
+   
+
+}
+#log-in-form-section form .inside-form .input { 
+    margin: 0 0 8px;
+
+   
+
+}
+
+
+#log-in-form-section form .inside-form input { 
+    padding: 15px 5px;
+    outline: none;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 6px;
+    width: 350px;
+    font-size: 1.1rem ;
+
+   
+
+}
+
+
+#log-in-form-section form .inside-form .extra-text{ 
+   
+    padding: 20px 0 70px;
+   
+
+}
+
+
+
+#log-in-form-section form .inside-form .extra-text .btn{ 
+    text-align: center;
+    margin: 0 0 20px;
+   
+   
+
+}
+
+#log-in-form-section form .inside-form .extra-text .btn button { 
+    padding: 10px 100px;
+    border: none;
+    background-color: #3e8afa;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 20px;
+    cursor: pointer;
+
+   
+
+}
+
+
+
+#log-in-form-section form .inside-form .extra-text .tiny-text{ 
+  
+   font-size: .9rem;
+   font-weight: 300;
+
+
+}
+
+
+
+

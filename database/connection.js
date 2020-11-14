@@ -1,9 +1,9 @@
 const  mysql = require('mysql')
 const DB = mysql.createConnection({
-  host: 'remotemysql.com',
-  user: 'HEKZX3hfQD',
-  password: 'bwe8MYz6sj',
-  database: 'HEKZX3hfQD'
+  host: '127.0.0.1',
+  user: 'root',
+  password: 'root',
+  database: 'movie'
 })
 
 
@@ -15,7 +15,7 @@ DB.connect((error) => {
                 console.log('creating a table flixers')
                 DB.query(`CREATE TABLE flixers(
                     id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-                    description VARCHAR(150) NOT NULL,
+                    description TEXT NOT NULL,
                     background_image TEXT NOT NULL,
                     genre VARCHAR(60) NOT NULL,
                     release_date DATE NOT NULL,
@@ -38,6 +38,7 @@ DB.connect((error) => {
                     f_name VARCHAR(100) NOT NULL,
                     l_name VARCHAR(100) NOT NULL,
                     email VARCHAR(100) NOT NULL,
+                    password TEXT NOT NULL, 
                     flixers_id INT)`)
             } else {
                 console.log('table users already exist')

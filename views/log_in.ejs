@@ -1,0 +1,46 @@
+<%- include('partials/header.ejs') -%>
+<section id="background">
+    <div class="inside">
+        <h2>Welcome back to Flixers </h2>
+        
+    </div>
+
+</section>
+
+
+<section id="log-in-form-section">
+    <form action="/login" method="post">  
+        <div class="form-heading">
+            <h3>Log in</h3>
+            <div>
+                <span> Don't have an account? </span>
+                <a class="highlight" href="/signup">Sign up</a>
+                <span>instead.</span>
+            </div>
+        </div> 
+        <hr class="hr-line"> 
+        <div class="inside-form">
+            <div class="email input">
+                <input placeholder="Email" type="text" name="user[email]" required>
+            </div>
+            <div class="password input">
+                <input placeholder="Password" type="password" name="user[password]" required>
+            </div>
+            <div class="extra-text">
+                <div class="btn">
+                    <button>Log in</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</section>
+
+
+
+
+
+
+<script src="/js/main.js"></script>   
+</body>
+<html>
