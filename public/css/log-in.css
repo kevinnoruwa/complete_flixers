@@ -4,7 +4,7 @@
     padding: 160px 0;
     color: white;
     position: relative;
-    top: -148px;
+    top: -160px;
 }
 
 #background .inside {
@@ -142,12 +142,13 @@
 }
 
 #log-in-form-section form .inside-form .extra-text .btn button { 
-    padding: 10px 100px;
-    border: none;
     background-color: #3e8afa;
-    color: white;
-    font-size: 1.2rem;
+    padding: 10px 100px;
     border-radius: 20px;
+    font-size: 1.2rem;
+    color: white;
+    border: none;
+    outline: none;
     cursor: pointer;
 
    

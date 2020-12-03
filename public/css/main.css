@@ -13,6 +13,9 @@
   padding: 0;
   margin: 0;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   
   font-family: 'Roboto', sans-serif;
@@ -65,6 +68,34 @@ li {
 
  }
 
+ .alert-err {
+  background-color: rgba(208, 2, 27, 0.1);
+  color: rgb(229, 71, 81);
+  border-radius: 10px;
+  position: relative;
+  font-size: 12px; 
+  padding: 5px;
+  bottom: 79px;
+  z-index: 10;
+  
+   
+   
+ }
+
+ .alert-success {
+  background-color: rgba(30, 238, 117, 0.1);
+  font-size: 1rem; z-index: 10;
+  color: rgb(19, 185, 61);
+  border-radius: 10px;
+  position: relative;
+  text-align: center;
+  font-size: 12px; 
+  padding: 5px;
+  top: -138px;
+ 
+
+ }
+
 
  /* MEDIA QUERIES */
 @media only screen and (min-width: 1367px ) {
@@ -98,6 +129,38 @@ li {
     justify-items: center;
     grid-gap: 15px 0; 
    }
+/* show */
+  
+  #movie-background {
+   
+    top: -160px;
+  
+
+  }
+  #movie-background .background-color .play-circle {
+    left: 486.5px;
+    top: 462px;
+  
+  }
+
+  #description-box {
+ 
+    width: 1000px;
+   
+  }
+    #extra-movies .movies-area .inside-movie-area {
+      grid-template-columns: 350px 350px 350px;
+      grid-gap: 50px 0;
+      
+  }
+  #extra-movies .title {
+    font-size: 2.2rem;
+  
+  }
+
+  /* .alert {
+    left: 410px;
+  } */
 
 
 
@@ -137,7 +200,34 @@ li {
         width: 50px;
         height: 50px;
       }
+    /* show page */
+    #movie-background {
+      top: -158px;
+  }
+  #movie-background .background-color .play-circle {
+    display: none;
+   
+  }
+
+  #description-box {
     
+    width: 625px;
+ 
+}
+  #description-box .inside-box {
+    grid-template-columns: 1fr;
+    padding: 25px 20px 30px;
+    justify-items: center;
+   
+}
+  #extra-movies .movies-area .inside-movie-area {
+    grid-template-columns: 1fr 1fr 1fr;
+
+  }
+ 
+  /* .alert {
+    left: 280px;
+  } */
 
 
   }
@@ -178,16 +268,22 @@ li {
       
       #header .inside {
         grid-template-columns: 1fr 1fr 1fr;
+        
       }
 
       #header .inside .header-nav .genre_tag {
         display: none;
       }
+      
 
       #intro-section {
         display: none;
 
       }
+
+      #header .inside .logo-container a {
+        font-size: 1rem;
+    }
       #content-section hr {
         width: 253px
       }
@@ -236,4 +332,96 @@ li {
       margin: 40px 0 0;
     }
 
+    /* Show */
+    #movie-background {
+      top: -159px;
+    
+  }
+
+  #description-box {
+    width: 300px;
+    max-width: 300px;
+    
+}
+
+  #description-box .inside-box {
+    grid-template-columns: 1fr;
+    padding: 25px 20px 30px;
+    display: grid;
+}
+
+  #description-box .movie-details .extras {
+    grid-template-columns: 1fr;
+    display: grid;
+    justify-items: start;
+    align-items: center;
+}
+
+#extra-movies .title {
+  font-size: 1.8rem;
+
+}
+#extra-movies .movies-area {
+  width: 315px;
+  max-width: 315px;
+ 
+}
+#extra-movies .movies-area .inside-movie-area {
+  grid-template-columns: .2fr .2fr;
+ 
+}
+#extra-movies .movies-area .inside-movie-area .movie-box img {
+  width: 130px;
+  position: relative;
+  left: -8px;
+}
+
+
+  #movie-background .background-color .play-circle {
+      display: none;
+    
+  }
+  #background .inside h2 {
+    font-size: 1.5rem;
+    
+}
+
+
+/* login */
+  #log-in-form-section form {
+    width: 314px;
+  
+  }
+
+  #log-in-form-section form .inside-form input {
+    width: 300px;
+    font-size: 1rem;
+  }
+
+  #log-in-form-section form .form-heading h3 {
+    font-size: 1.3rem;
+    margin: 0 0 8px;
+  }
+  /* register */
+
+  #sign-up-form-section form .form-heading h3 {
+    font-size: 1.3rem;
+    margin: 0 0 8px;
+}
+  #sign-up-form-section form {
+    width: 314px;
+   
+  }
+
+  #sign-up-form-section form .inside-form input {
+    width: 300px;
+    font-size: 1rem;
+  }
+  #sign-up-form-section form .inside-form .extra-text .tiny-text {
+    font-size: .8rem;
+    font-weight: 300;
+}
+  
+
  }
+

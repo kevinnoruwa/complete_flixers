@@ -1,4 +1,10 @@
+
+
+
 const  mysql = require('mysql')
+
+
+
 const DB = mysql.createConnection({
   host: '127.0.0.1',
   user: 'root',
@@ -18,7 +24,7 @@ DB.connect((error) => {
                     description TEXT NOT NULL,
                     background_image TEXT NOT NULL,
                     genre VARCHAR(60) NOT NULL,
-                    release_date DATE NOT NULL,
+                    release_date varchar(150) NOT NULL,
                     cast VARCHAR(150) NOT NULL,
                     title VARCHAR(100) NOT NULL,
                     duration INT NOT NULL,

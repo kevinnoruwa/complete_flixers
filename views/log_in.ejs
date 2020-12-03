@@ -21,7 +21,7 @@
         <hr class="hr-line"> 
         <div class="inside-form">
             <div class="email input">
-                <input placeholder="Email" type="text" name="user[email]" required>
+                <input placeholder="Email" type="email" name="user[email]" required>
             </div>
             <div class="password input">
                 <input placeholder="Password" type="password" name="user[password]" required>
@@ -31,6 +31,8 @@
                     <button>Log in</button>
                 </div>
             </div>
+            
+        <%- include('partials/flash.ejs') -%>
         </div>
     </form>
 

@@ -1,9 +1,9 @@
 #background {
-    background-color: #0093E9;
     background-image: linear-gradient(0deg, #3e8afa 0%, #144184 100%);
+    background-color: #0093E9;
+    position: relative;
     padding: 160px 0;
     color: white;
-    position: relative;
     top: -148px;
 }
 
@@ -112,23 +112,18 @@
 
 
 #sign-up-form-section form .inside-form input { 
+    border: 1px solid rgba(0,0,0,.2);
+    font-size: 1.1rem ;
+    border-radius: 6px;
     padding: 15px 5px;
     outline: none;
-    border: 1px solid rgba(0,0,0,.2);
-    border-radius: 6px;
     width: 350px;
-    font-size: 1.1rem ;
-
-   
 
 }
 
 
 #sign-up-form-section form .inside-form .extra-text{ 
-   
     padding: 20px 0 70px;
-   
-
 }
 
 
@@ -136,32 +131,25 @@
 #sign-up-form-section form .inside-form .extra-text .btn{ 
     text-align: center;
     margin: 0 0 20px;
-   
-   
-
 }
 
 #sign-up-form-section form .inside-form .extra-text .btn button { 
-    padding: 10px 100px;
-    border: none;
     background-color: #3e8afa;
-    color: white;
-    font-size: 1.2rem;
+    padding: 10px 100px;
     border-radius: 20px;
+    font-size: 1.2rem;
     cursor: pointer;
-
-   
+    color: white;
+    outline: none;
+    border: none; 
 
 }
 
 
 
 #sign-up-form-section form .inside-form .extra-text .tiny-text{ 
-  
    font-size: .9rem;
    font-weight: 300;
-
-
 }
 
 

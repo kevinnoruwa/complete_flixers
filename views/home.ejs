@@ -1,4 +1,12 @@
-<%- include('partials/header.ejs') -%>
+
+
+
+    <%- include('partials/header.ejs') -%>
+
+
+
+    
+
 
 
 <section id="intro-section">
@@ -21,7 +29,7 @@
    
        
 </section>
-
+<%- include('partials/flash.ejs') -%>
 <section id="content-section">
     <div class="header-title">
         <h3>Streaming Now</h3>
@@ -51,7 +59,8 @@
                 </div>
             </div>   
 
-            <% })%>     
+            <% })%>  
+        
         </div>
     </div>
 </section>
@@ -60,15 +69,21 @@
 <section id="pagination-section">
     <div class="pagination-container">
         <div class="pagination-box ">
-            <div class="pagination-circle active">
+            <a href="/page=1">
+            <div class="pagination-circle ">
                 <span>1</span>
             </div>
-            <div class="pagination-circle">
-                <span>2</span>
-            </div>
+        </a>
+            <a href="/page=2">
+                <div class="pagination-circle">
+                    <span>2</span>
+                </div>
+            </a>
+            <a href="/page=3">
             <div class="pagination-circle">
                 <span>3</span>
             </div>
+            </a>
         </div>
     </div>
 </section>

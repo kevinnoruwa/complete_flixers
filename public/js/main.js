@@ -1,7 +1,7 @@
 
 const genre_tag = document.querySelector('.genre_tag')
 const sub_menu = document.querySelector('.genres')
-
+const auth =  document.querySelector('.auth')
 
 
 genre_tag.addEventListener(('mouseover'), () => {
@@ -17,6 +17,13 @@ genre_tag.addEventListener(('mouseleave'), () => {
 })
 
 
+
+
+auth.addEventListener(('click'), () => {
+   
+     console.log(req.session.auth)
+ })
+ 
 
 
 

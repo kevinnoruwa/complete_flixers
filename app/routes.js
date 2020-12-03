@@ -10,25 +10,128 @@ const bcrypt = require('bcrypt')
 const route = express.Router()
 
 
+// function paginatedResults(model){
+//     return(req, res, next) => {
+//         const page  = parseInt(req.query.page)
+//         const limit = parseInt(req.query.limit)
+//         const startIndex = (page - 1) * limit
+//         const endIndex = page * limit 
+//         const results = {}
+    
+//         if(endIndex  < users.length ){
+//             results.next = {
+//                 page: page + 1,
+//                 limit: limit 
+//             }
+    
+//         }
+//         if(startIndex > 0) {
+//             results.prev = {
+//                 page: page - 1,
+//                 limit: limit 
+//             }
+    
+//         }
+    
+      
+
+//        results.results = model.slice(startIndex, endIndex)
+//         res.paginatedResults = results
+//         next();
+
+        
+//     }
+   
+// }
+// route.get('/users', (req, res) => {
+//     const page  = parseInt(req.query.page)
+//     const limit = parseInt(req.query.limit)
+//     const startIndex = (page - 1) * limit
+//     const endIndex = page * limit 
+//     const results = {}
+
+//     if(endIndex  < users.length ){
+//         results.next = {
+//             page: page + 1,
+//             limit: limit 
+//         }
+
+//     }
+//     if(startIndex > 0) {
+//         results.prev = {
+//             page: page - 1,
+//             limit: limit 
+//         }
+
+//     }
+
+  
+
+//    results.results = users.slice(startIndex, endIndex)
+//     res.json(results)
+// })
 
 
 
 
 // all movies
 route.get('/', (req, res) => {
-    DB.query(`SELECT * FROM flixers` , (err, movies) => {
+    DB.query(`SELECT * FROM flixers ORDER BY id ASC LIMIT 8 OFFSET 0` , (err, movies) => {
+        
         if(err) {
             console.log(err)
         } else {
-            res.render('home.ejs', {movies})
+            
+            return res.render('home.ejs', {movies})
+       
     
         }
     })   
 })
 
+route.get('/page=1', (req, res) => {
+    DB.query(`SELECT * FROM flixers ORDER BY id ASC LIMIT 8 OFFSET 0 ` , (err, movies) => {
+        
+        if(err) {
+            console.log(err)
+        } else {
+            return res.render('home.ejs', {movies})
+    
+        }
+    })   
+})
+
+route.get('/page=2', (req, res) => {
+    DB.query(`SELECT * FROM flixers ORDER BY id ASC LIMIT 8 OFFSET 8` , (err, movies) => {
+        
+        if(err) {
+            console.log(err)
+        } else {
+            return res.render('home.ejs', {movies})
+    
+        }
+    })   
+})
+
+route.get('/page=3', (req, res) => {
+    DB.query(`SELECT * FROM flixers ORDER BY id ASC LIMIT 8  OFFSET 16` , (err, movies) => {
+        
+        if(err) {
+            console.log(err)
+        } else {
+            return res.render('home.ejs', {movies})
+    
+        }
+    })   
+})
+
+
+
+
 // show
 
 route.get('/movie/:id',  (req, res) => {
+    
     let id = req.params.id  
         DB.query(`SELECT * FROM flixers WHERE id = "${id}" LIMIT 1`, (err, movie) => {
             if(err || movie.length === 0 ) {
@@ -45,6 +148,7 @@ route.get('/movie/:id',  (req, res) => {
 
 
 route.get('/signup', (req, res) => {
+    const auth = req.session.user
     res.render('sign_up.ejs')
 })
 
@@ -60,6 +164,7 @@ route.post("/signup", validateUser, catchAsync( async (req, res, next) => {
                 if(err) {
                   res.render('error.ejs', {err})
                 } else {
+                    req.flash("success", 'Welcome to flixers!')
                     res.redirect("/")
                 }
             }))
@@ -68,6 +173,7 @@ route.post("/signup", validateUser, catchAsync( async (req, res, next) => {
 // log in
 
 route.get('/login', (req, res) => {
+    
     res.render('log_in.ejs')
 })
 
@@ -81,44 +187,49 @@ route.post('/login', (req, res) => {
 
                 if(validPassword === true) {
                     req.session.user = account[0].id
+                    req.flash("success", 'Welcome back to flixers!')
                     res.redirect("/")
                 } else {
-                    res.send("inncorect password or username")
+                    req.flash('error', 'incorrect password or email')
+                    return res.redirect('/login')
                 }           
             } 
         } catch (e) {
-            res.send("inccorect password or username")
+            req.flash('error', 'inncorect password or email')
+            return res.redirect('/login')
         }   
     })    
 })
 
 
 
+// log out 
+
+
+// route.post("/logout", (req, res) => {
+//     req.session.user = null;
+//     res.redirect("/login")
+// })
 
 
 
 
 
-
-
-
-
-
-
-route.get("/secret", async (req, res) => {
-    try {
-        if( !req.session.user) {
-            res.redirect("/")
+// route.get("/secret", async (req, res) => {
+//     try {
+//         if( !req.session.user) {
+//            return res.redirect("/")
             
-        }
-        res.send("this is secret ! You cannot see me unless you are")
-    } catch(e) {
-        console.log(e)
+//         }
+//         res.render("secret.ejs")
+//     } catch(e) {
+//         console.log(e)
     
-    }
+//     }
   
    
-})
+// })
+
 
 
 
@@ -130,6 +241,7 @@ route.all("*", (req, res, next) => {
 })
 
 route.use((err, req, res, next) => {
+   
     const {statusCode = 500} = err
     if(!err.message) {
       err.message = "something went wrong"
