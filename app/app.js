@@ -43,10 +43,6 @@ app.use((req, res, next) => {
 
 
 
-  const m = [
-    {name: 'movie'},
-    {name: 'test'}
-]
 
 
 
